@@ -4,8 +4,10 @@ MAINTAINER hiroaki0404@gmail.com
 
 # build
 #  docker build -t emacs-ruby .
-# run
-#  docker run -d -P -v /Users:/Users -v $HOME/Dropbox/dot.docker/.emacs.d:/home/docker/.emacs.d/ emacs-ruby
+# run(ex. Mac/docker-machine)
+#  docker `docker-machine config xxx` run -d -P -v /Users:/Users -v $HOME/Dropbox/dot.docker/.emacs.d:/home/docker/.emacs.d/ emacs-ruby
+# run(ex. Windows(MINGW)/docker-machine)
+#  docker `docker-machine config xxx` run -d -P -v //c/Users:/Users -v //c/Users/your-name/dot.docker/.emacs.d:/home/docker/.emacs.d/ emacs-ruby
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock && /usr/sbin/tzdata-update

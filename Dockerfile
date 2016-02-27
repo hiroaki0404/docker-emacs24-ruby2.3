@@ -11,6 +11,7 @@ MAINTAINER hiroaki0404@gmail.com
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN echo 'ZONE="Asia/Tokyo"' > /etc/timezone && dpkg-reconfigure tzdata
+ENV TZ=JST-9
 
 RUN apt-get update -y && \
     apt-get install -y locales sudo openssh-server xterm xauth emacs24-nox emacs24-el emacs-mozc screen && \

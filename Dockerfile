@@ -8,6 +8,8 @@ MAINTAINER hiroaki0404@gmail.com
 #  docker run -d -P -v /Users:/Users -v $HOME/Dropbox/dot.docker/.emacs.d:/home/docker/.emacs.d/ emacs-ruby
 
 ENV DEBIAN_FRONTEND=noninteractive
+RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock && /usr/sbin/tzdata-update
+
 RUN apt-get update -y && \
     apt-get install -y locales sudo openssh-server xterm xauth emacs24-nox emacs24-el emacs-mozc screen && \
     locale-gen en_US.UTF.8

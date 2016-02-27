@@ -10,7 +10,7 @@ MAINTAINER hiroaki0404@gmail.com
 #  docker `docker-machine config xxx` run -d -P -v //c/Users:/Users -v //c/Users/your-name/dot.docker/.emacs.d:/home/docker/.emacs.d/ emacs-ruby
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock && dpkg-reconfigure tzdata
+RUN echo 'ZONE="Asia/Tokyo"' > /etc/timezone && dpkg-reconfigure tzdata
 
 RUN apt-get update -y && \
     apt-get install -y locales sudo openssh-server xterm xauth emacs24-nox emacs24-el emacs-mozc screen && \
